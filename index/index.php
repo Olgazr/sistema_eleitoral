@@ -1,18 +1,19 @@
 <?php
+// Mostrar erros na tela
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include '../database.php';
+// DEBUG: mostrar caminho atual
+echo "Caminho atual: " . __DIR__ . "<br>";
+echo "Tentando incluir: " . __DIR__ . '/../database.php' . "<br>";
 
-// ... resto do código
-
-include '../database.php';
-
+// Incluir banco de dados
+include __DIR__ . '/../database.php';
 
 // Buscar os candidatos no banco
 $result = $con->query("SELECT * FROM candidatos ORDER BY nome ASC");
-$candidatos = $result->fetch_all(MYSQLI_ASSOC);
+...
 ?>
 
 <!DOCTYPE html>
