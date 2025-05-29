@@ -1,5 +1,14 @@
 <?php
-include 'database.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include '../database.php';
+
+// ... resto do código
+
+include '../database.php';
+
 
 // Buscar os candidatos no banco
 $result = $con->query("SELECT * FROM candidatos ORDER BY nome ASC");
