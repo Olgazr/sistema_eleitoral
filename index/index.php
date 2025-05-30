@@ -40,6 +40,11 @@ $candidatos = $result->fetch_all(MYSQLI_ASSOC);
               <label for="partido" class="form-label">Partido</label>
               <input type="text" class="form-control" name="partido" id="partido" required>
             </div>
+          <div class="mb-3">
+              <label for="imagem" class="form-label">URL da Imagem</label>
+              <input type="url" class="form-control" name="imagem" id="imagem">
+            </div>
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -56,7 +61,7 @@ $candidatos = $result->fetch_all(MYSQLI_ASSOC);
         <?php foreach ($candidatos as $cand): ?>
           <div class="col-md-4 mb-3">
             <div class="card">
-              <img src="https://via.placeholder.com/150" class="card-img-top" alt="<?= htmlspecialchars($cand['nome']) ?>">
+            <img src="<?= htmlspecialchars($cand['imagem'] ?? 'https://via.placeholder.com/150') ?>" class="card-img-top" alt="<?= htmlspecialchars($cand['nome']) ?>">
               <div class="card-body">
                 <h5 class="card-title"><?= htmlspecialchars($cand['nome']) ?></h5>
                 <p class="card-text">Partido: <?= htmlspecialchars($cand['partido']) ?></p>
