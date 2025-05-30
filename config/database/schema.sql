@@ -4,6 +4,7 @@ CREATE TABLE candidatos (
     partido VARCHAR(100)
 );
 
+
 CREATE TABLE votos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     eleitor_id INT,
