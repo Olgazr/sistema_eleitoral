@@ -1,7 +1,7 @@
 <?php
 
 include '../database/database.php';
-
+2
 ?>
 
 <!DOCTYPE html>
