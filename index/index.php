@@ -1,11 +1,9 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-?>
-<?php
-include '../database/database.php';
 
-// Buscar os candidatos no banco
+include '../config/database/database.php';
+
 $result = $con->query("SELECT * FROM candidatos ORDER BY nome ASC");
 $candidatos = $result->fetch_all(MYSQLI_ASSOC);
 ?>
@@ -22,15 +20,13 @@ $candidatos = $result->fetch_all(MYSQLI_ASSOC);
   <div class="container py-4">
     <h1 class="mb-4">Lista de Candidatos</h1>
 
-    <!-- Botão para abrir modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCandidato">
       Adicionar candidato
     </button>
 
-    <!-- Modal -->
     <div class="modal fade" id="modalCandidato" tabindex="-1" aria-labelledby="modalCandidatoLabel" aria-hidden="true">
       <div class="modal-dialog">
-        <form action="../database/adicionar_candidato.php" method="POST" class="modal-content">
+        <form action="../config/database/adicionar_candidato.php" method="POST" class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="modalCandidatoLabel">Adicionar Candidato</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>

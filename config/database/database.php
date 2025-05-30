@@ -1,5 +1,10 @@
 <?php
-$con = new mysqli("127.0.0.1", "root", "", "sistema_eleitoral");
+$host = 'localhost';
+$user = 'root';
+$senha = 'root';
+$banco = 'sistema_eleitoral'; 
+
+$con = new mysqli($host, $user, $senha, $banco);
 
 if ($con->connect_error) {
     die("Erro na conexão: " . $con->connect_error);
